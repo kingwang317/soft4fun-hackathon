@@ -5,6 +5,9 @@
 
 	// SER config
 	define('SER_API_URL', 'http://api.ser.ideas.iii.org.tw:80/api/');
+	
+	// YQL
+	define('YQL_API_URL', "https://query.yahooapis.com/v1/public/yql");
 
 
 ?>
