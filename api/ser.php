@@ -8,9 +8,6 @@
 		
 		$ch = curl_init();
 		
-		// Add SER token
-		array_push($post, SER_TOKEN);
-		
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST,  'POST');
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
@@ -62,7 +59,7 @@
 		
 		$result = get_url_content($url, $post, true);
 		$token = '';
-		
+		//var_dump($result);
 		if($result){
 			$decode_obj = json_decode($result);
 			$token = $decode_obj->result->token;

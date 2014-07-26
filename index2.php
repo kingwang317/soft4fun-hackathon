@@ -106,6 +106,7 @@
                             <li>支援NFC,4G LTE 台灣全頻段,無線充電</li>
                             <li>完整型號:PF500KL+此賣場不含平板基座</li>
                         </ul>
+                        <a class="btn btn-primary" target="_blank" href="https://tw.buy.yahoo.com/gdsale/gdsale.asp?gdid=5245649&hpp=hero_big04">我要購買</a>
                         <h3>網友都覺得</h3>
                         <div class="progress">
                             <div class="progress-bar progress-bar-success" style="width: 35%">
