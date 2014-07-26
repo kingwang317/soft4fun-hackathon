@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <?php 
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
     require_once("lib/database.inc.php");
 
     $db = init_db();
     include('./api/api.php');
     // var_dump(kw_forum_content('小米', 11));
     $result;
-    $keyword = $_GET["k"];
+    $keyword = isset($_GET["k"])?strtolower($_GET["k"]):"";
     if (isset($keyword) && $keyword  != "") {
        // var_dump(kw_forum_content($keyword, 11));
         $result = kw_forum_content($keyword, 10);
@@ -111,7 +112,7 @@
                       <tr>
                           <td><input type="checkbox" /></td>
                           <!-- <td><?php $value[0]->titile ?></td>  -->
-                           <td><?php print_r($value[0]->title) ?></td> 
+                           <td><a href="<?php echo $value[0]->url; ?>"><?php print_r($value[0]->title) ?></a></td> 
                            <td>
                             <?php 
                                 $num1 = rand(0,40);
@@ -133,7 +134,26 @@
                             </div>
                            </td>
                            <td><?php print_r($value[0]->reply_count) ?></td>
-                          <td>小米</td> 
+                          <td>
+
+                            <?php 
+
+                            $get_prod_sql = " SELECT word FROM prod_word WHERE source_word = '$keyword' OR word LIKE '%$keyword%' ";
+
+
+                            $res_words = $db->get_results($get_prod_sql,ARRAY_A); 
+
+                            if(isset($res_words))
+                                foreach ($res_words as $key => $word) {
+                                    //echo strpos($value[0]->title, $value["word"]);
+                                    if( strpos(strtolower($value[0]->title), $word["word"]) !== false ){
+                                        echo $word["word"].",";
+                                    }
+                                }
+                             ?>
+
+
+                          </td> 
                       </tr>
                       <?php 
 
