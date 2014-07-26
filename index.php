@@ -38,6 +38,7 @@ $ckip_client_obj = new CKIPClient(
 $result = $db->get_results($get_case);
 */
 $raw_text = isset($_POST['content'])?$_POST['content']:null;
+$total_words = 1;
 if(isset($raw_text)){
     //foreach ($result as $key => $value) {*/
         # code...
@@ -55,7 +56,7 @@ if(isset($raw_text)){
 	$return_text = "";
 	$return_term = array();
 	$strings = "";
-	$total_words = 0;
+	
 	foreach ($raw_text_array as $key1=>$raw_sentence) {
 
 	   $return_text .= $ckip_client_obj->send($raw_sentence);
@@ -166,4 +167,5 @@ echo "原文:<br />".$_POST["content"];
 <form method="POST">
 <textarea name="content" cols="40" rows="20"></textarea>
 <input type="submit" value="送出"/>
+<a href="show_sentiment.php">我要協助反饋詞庫</a>
 </form>

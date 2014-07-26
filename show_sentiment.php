@@ -32,6 +32,7 @@ if(isset($res)){
 	<input type="radio" name="class" value="neu">中性情緒詞<br />
 	<input type="radio" name="class" value="ign">不是情緒詞(如 你我他等介係詞)<br />
 	<input type="submit" value="反饋" />
+	<a href="show_sentiment.php">我也要玩情感分析</a>
 	</form>
 	
 	<?php
