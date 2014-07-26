@@ -166,6 +166,9 @@ class Sentiment {
 						//Set count equal to it
 
 						$count = $this->dictionary[$token][$class];
+						if($class == "neg"){
+							$count= $count+10;
+						}
 					} else {
 						$count = 0;
 					}
@@ -226,7 +229,7 @@ class Sentiment {
 			include($fn);
 			//print_r($words);
 			//$words = unserialize($temp);
-			echo $class."<br />";
+			//echo $class."<br />";
 			//print_r($words);
 		} else {
 			echo 'File does not exist: ' . $fn;

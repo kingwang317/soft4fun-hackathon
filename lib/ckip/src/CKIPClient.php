@@ -106,7 +106,7 @@ class CKIPClient
 
       // empty the array
       $this->sentence = array();
-      echo $this->return_text;
+      //echo $this->return_text;
       if($parse_return_text = simplexml_load_string($this->return_text)) {
 
          $sentence_array = $parse_return_text->result->sentence;
