@@ -18,7 +18,7 @@
 		$result = curl_exec($ch);
 		curl_close ($ch);
 		
-		// 如果 API Token 過期，更新 Token 並重新呼叫 API
+		// 如果 API Token 過期，更新 Token 
 		if ($kernal == false){
 			if (check_api_result($result) == false){
 				user_get_token();
@@ -167,7 +167,8 @@
 		=======================================================
 	*/
 	
-	function kw_ptt_title($keyword = '', $page = 1, $limit = 100, $push = 0, $sort='time_desc'){
+	// PTT 標題
+	function kw_ptt_title($keyword = '', $limit = 100, $page = 1, $push = 0, $sort='time_desc'){
 		$url = SER_API_URL . 'keyword_search/ptt/title';
 	
 		$post = array(
@@ -177,6 +178,241 @@
 			'push'			=> $push,
 			'sort'			=> $sort,
 			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// PTT 內容
+	function kw_ptt_content($keyword = '', $limit = 100, $page = 1, $push = 0, $sort='time_desc'){
+		$url = SER_API_URL . 'keyword_search/ptt/content';
+	
+		$post = array(
+			'keyword' 		=> $keyword,
+			'page'			=> $page,
+			'limit'			=> $limit,
+			'push'			=> $push,
+			'sort'			=> $sort,
+			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// 論壇文章標題
+	function kw_forum_title($keyword = '', $limit = 100, $page = 1, $reply = 0, $sort='time_desc'){
+		$url = SER_API_URL . 'keyword_search/forum/title';
+	
+		$post = array(
+			'keyword' 		=> $keyword,
+			'page'			=> $page,
+			'limit'			=> $limit,
+			'reply'			=> $reply,
+			'sort'			=> $sort,
+			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// 論壇文章內容
+	function kw_forum_content($keyword = '', $limit = 100, $page = 1, $reply = 0, $sort='time_desc'){
+		$url = SER_API_URL . 'keyword_search/forum/content';
+	
+		$post = array(
+			'keyword' 		=> $keyword,
+			'page'			=> $page,
+			'limit'			=> $limit,
+			'reply'			=> $reply,
+			'sort'			=> $sort,
+			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// FB 塗鴉牆
+	function kw_facebook($keyword = '', $limit = 100, $page = 1, $comments = 0, $likes = 0, $shares = 0, $sort='time_desc'){
+		$url = SER_API_URL . 'keyword_search/facebook';
+	
+		$post = array(
+			'keyword' 		=> $keyword,
+			'limit'			=> $limit,
+			'page'			=> $page,
+			'comments'		=> $comments,
+			'likes'			=> $likes,
+			'shares'		=> $shares,
+			'sort'			=> $sort,
+			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// 新聞標題
+	function kw_news_title($keyword = '', $limit = 100, $page = 1, $reply = 0, $sort='time_desc'){
+		$url = SER_API_URL . 'keyword_search/news/title';
+	
+		$post = array(
+			'keyword' 		=> $keyword,
+			'page'			=> $page,
+			'limit'			=> $limit,
+			'reply'			=> $reply,
+			'sort'			=> $sort,
+			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// 新聞內容
+	function kw_news_content($keyword = '', $limit = 100, $page = 1, $reply = 0, $sort='time_desc'){
+		$url = SER_API_URL . 'keyword_search/news/content';
+	
+		$post = array(
+			'keyword' 		=> $keyword,
+			'page'			=> $page,
+			'limit'			=> $limit,
+			'reply'			=> $reply,
+			'sort'			=> $sort,
+			'token'			=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	/*
+		=======================================================
+		taobao : 淘寶食品類商品分析
+		=======================================================
+	*/
+	
+	// 查詢熱門分類產品
+	function taobao_topitem($datestr, $cat){
+		$url = SER_API_URL . 'taobao/topitem';
+	
+		$post = array(
+			'date' 	=> $datestr,
+			'cat'	=> $cat,
+			'token'	=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	
+	}
+	
+	// 查詢熱門分類產品
+	function taobao_topcat($datestr){
+		$url = SER_API_URL . 'taobao/topcat';
+	
+		$post = array(
+			'date' 	=> $datestr,
+			'token'	=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	// 淘寶 5 日商品銷售數字
+	function taobao_item_daily_sell($item_id){
+		$url = SER_API_URL . 'taobao/item_daily';
+	
+		$post = array(
+			'item_id' 	=> $item_id,
+			'token'		=> SER_TOKEN
+		);
+		
+		$result = get_url_content($url, $post);
+		//var_dump($result);
+		
+		if($result){
+			$decode_obj = json_decode($result);
+			return $decode_obj->result;
+		}
+		
+		return 'cannot fetch result';
+	}
+	
+	
+	// 淘寶農產品關鍵字搜尋
+	function taobao_keyword($keyword){
+		$url = SER_API_URL . 'taobao/keyword_search';
+	
+		$post = array(
+			'keyword' 	=> $keyword,
+			'token'		=> SER_TOKEN
 		);
 		
 		$result = get_url_content($url, $post);

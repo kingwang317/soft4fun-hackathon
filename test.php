@@ -4,6 +4,5 @@
 	
 	//MobileComm
 	
-	var_dump (kw_ptt_title('Samsung'));
-
+	var_dump(top_article_forum('Mobile01', 11));
 ?>
