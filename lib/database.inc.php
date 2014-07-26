@@ -3,8 +3,8 @@ define('CLIENT_CHARSET',	'UTF8');
 define('TABLE_PREFIX',		'proj');
 
 define('DB_USER',		'root');
-define('DB_PASSWD',		'king317');
-define('DB_NAME',		'9icase');
+define('DB_PASSWD',		'root');
+define('DB_NAME',		'hackathon');
 define('DB_HOST',		'localhost');
 define('EZSQL_LIB',		'ezsql');
 
