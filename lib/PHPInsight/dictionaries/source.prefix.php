@@ -1,5 +1,5 @@
 <?php
-
+/*
 $words = array (
 1=>'dvd player',
 2=>'dvd播放器',
@@ -5070,18 +5070,18 @@ $words = array (
 5031=>'攝影機',
 5032=>'攝影機 評價',
 5033=>'攝影機 價格'
-);
+);*/
 require_once(__DIR__."/../../database.inc.php");
 $db = init_db();
 
 
-//$sql = " SELECT word FROM wordbase WHERE class = 'prefix' ";
-//$words = $db->get_results($sql,ARRAY_A);
-
+$sql = " SELECT word FROM wordbase WHERE class = 'prefix' ";
+$words = $db->get_results($sql,ARRAY_A);
+/*
 foreach ($words as $key => $value) {
 
 	$sql = ' INSERT INTO `prod_word`( `word`, `type`,  `source_word`,  `mod_date`) VALUES("'.$value.'","3C","'.$value.'",NOW())';
 	echo $sql;
 	$db->query($sql);
-}
+}*/
 ?>
