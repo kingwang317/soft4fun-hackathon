@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.php">It4Fun 2014 Hackathon</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -83,18 +83,18 @@
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li> 
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/ttl_82_1_83_v7_2.jpg?ud=1407251029" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/ttl_122_1_136_v7_2.jpg?ud=1407251029" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
+                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/ttl_162_1_163_v7_2.jpg?ud=1407251029" alt="">
+                                </div> 
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -111,12 +111,12 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5059114&s=400&t=0&sq=1" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="index2.html">First Product</a>
+                                <h4 class="pull-right">$1990</h4>
+                                <h4><a href="index2.php">超低售價↘</a>
                                 </h4>
-                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                <p>Victory’s D1 4吋雙核心智慧美型雙卡手機</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>
@@ -133,10 +133,10 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=4576077&s=400&t=0&sq=1" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="#">Second Product</a>
+                                <h4><a href="index2.php">Second Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -155,10 +155,10 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5182851&s=400&t=0&sq=1" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="#">Third Product</a>
+                                <h4><a href="index2.php">Third Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -177,10 +177,10 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5242975&s=400&t=0&sq=1" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$84.99</h4>
-                                <h4><a href="#">Fourth Product</a>
+                                <h4><a href="index2.php">Fourth Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -199,10 +199,10 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5141211&s=400&t=0&sq=1" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$94.99</h4>
-                                <h4><a href="#">Fifth Product</a>
+                                <h4><a href="index2.php">Fifth Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -219,11 +219,26 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <h4><a href="#">Like this template?</a>
-                        </h4>
-                        <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                        <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
+                   <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5242978&s=400&t=0&sq=1" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$94.99</h4>
+                                <h4><a href="index2.php">Fifth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">18 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -243,7 +258,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; It4Fun 2014 Hackathon</p>
                 </div>
             </div>
         </footer>
