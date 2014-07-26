@@ -44,6 +44,8 @@ if(isset($res)){
 	</body>
 </html>
 	<?php
+}else{
+	echo "目前沒有需要分類的詞性！感謝您的大力幫忙！";
 }
 
 ?>
