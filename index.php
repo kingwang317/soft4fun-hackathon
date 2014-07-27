@@ -135,12 +135,12 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=4576077&s=400&t=0&sq=1" alt="">
+                            <img src="https://s.yimg.com/hg/pimg2/98/48/p085555186961-item-1714xf2x0600x0600-m.jpg" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="index2.php">Second Product</a>
+                                <h4 class="pull-right">$7450</h4>
+                                <h4><a href="index2.php">ASUS ZenFone 6</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>限量金 送手機保護貼+視窗皮套 六吋雙卡雙待 A600CG A600 6期0利率+免運</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">12 reviews</p>
@@ -157,12 +157,12 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5182851&s=400&t=0&sq=1" alt="">
+                            <img src="https://s.yimg.com/hg/pimg2/b3/5b/p008853561277-item-2641xf2x0500x0500-m.jpg" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="index2.php">Third Product</a>
+                                <h4 class="pull-right">$5790</h4>
+                                <h4><a href="index2.php">華碩Asus ZenFone 5</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>華碩Asus ZenFone 5 (2G RAM/ 16GB ROM) 多核旗艦機-現貨供應</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">31 reviews</p>
@@ -179,12 +179,12 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5242975&s=400&t=0&sq=1" alt="">
+                            <img src="https://s.yimg.com/hg/pimg1/6d/71/p014152362944-item-2387xf1x0600x0450-m.jpg" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$84.99</h4>
-                                <h4><a href="index2.php">Fourth Product</a>
+                                <h4 class="pull-right">$5390</h4>
+                                <h4><a href="index2.php">ASUS ZenFone 5</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>熱賣 ASUS ZenFone 5 雙卡機16G，送 5200mAh行動電源(VIO)+保護貼+APP軟體卷，A500CG</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">6 reviews</p>
@@ -199,7 +199,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                  <!--   <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5141211&s=400&t=0&sq=1" alt="">
                             <div class="caption">
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                     </div>
-
+ -->
                 </div>
 
             </div>
