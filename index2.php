@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php 
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+    include('./api/api.php');
+    // var_dump(kw_forum_content('小米', 11));
+    $result;
+    $keyword = isset($_GET["k"])?strtolower($_GET["k"]):"zenfone 5";
+    if (isset($keyword) && $keyword  != "") {
+       // var_dump(kw_forum_content($keyword, 11));
+        $result = kw_forum_content($keyword, 10);
+        $prod = yahoo_search_item($keyword);
+        //print_r($prod->query->results->result->hits->ec_productid);
+        $relate_prod = yahoo_get_relate_item($prod->query->results->result->hits->ec_productid);
+        //print_r($relate_prod->query->results->json->result);
+
+        $relate_prod = $relate_prod->query->results->json->result;
+    }
+
+
+ ?>
 <html lang="en">
 
 <head>
@@ -70,9 +89,9 @@
             <div class="col-md-3">
                 <p class="lead">Shop Name</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">3C版</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    <a href="#" class="list-group-item">ASUS</a>
+                    <a href="#" class="list-group-item">小米</a>
+                    <a href="#" class="list-group-item">華為</a>
                 </div>
             </div>
 
@@ -94,17 +113,18 @@
                     </div>
 
                     <div class="col-md-7">
-                        <h3>ASUS PadFone S 5吋四核心4G LTE防潑水變形手機 </h3>
-                        <h3><small>建議售價$9,999</small></h3>
+                        <h3>ASUS Zenfone 5 A500KL (2G/16G) 5吋4G LTE智慧手機</h3>
+                        <h3><small>建議售價$6,990</small></h3>
                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p> -->
                         <!-- <h3>Project Details</h3> -->
-                        <ul>
-                            <li>2GB RAM/16GB ROM</li>
-                            <li>高通2.3GHz四核心</li>
-                            <li>前200萬+後1300萬畫素相機</li>
-                            <li>符合國際級電信商150cm落摔&IPX2防潑水測試標準**</li>
-                            <li>支援NFC,4G LTE 台灣全頻段,無線充電</li>
-                            <li>完整型號:PF500KL+此賣場不含平板基座</li>
+                        <ul >
+                                <li>2G RAM / 16G ROM</li>
+                                <li>5吋HD IPS+面板+16:9比例</li>
+                                <li>高通1.2GHZ 四核心</li>
+                                <li>800萬畫素+F2.0 光圈+四倍感光</li>
+                                <li>獨家ASUS ZenUI</li>
+                                <li>支援4G LTE台灣全頻段</li>
+                                <li>完整型號:A500KL</li>
                         </ul>
                         <a class="btn btn-primary" target="_blank" href="https://tw.buy.yahoo.com/gdsale/gdsale.asp?gdid=5245649&hpp=hero_big04">我要購買</a>
                         <h3>網友都覺得</h3>
@@ -165,44 +185,37 @@
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="item active">
+                    <div class='item active'>
                         <!-- <img class="slide-image" src="http://placehold.it/800x300" alt=""> -->
-                        <div class="col-sm-3 col-xs-6">
-                            <a href="#">
-                                <img class="img-responsive portfolio-item" src="https://tw.m.yimg.com/res/gdsale/st_pic/5122/st-5122643-s200.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href="#">
-                                <img class="img-responsive portfolio-item" src="https://tw.m.yimg.com/res/gdsale/st_pic/5122/st-5122643-s200.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href="#">
-                                <img class="img-responsive portfolio-item" src="https://tw.m.yimg.com/res/gdsale/st_pic/5122/st-5122643-s200.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href="#">
-                                <img class="img-responsive portfolio-item" src="https://tw.m.yimg.com/res/gdsale/st_pic/5122/st-5122643-s200.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- <img class="slide-image" src="http://placehold.it/800x300" alt=""> -->
-                        <div class="col-sm-3 col-xs-6">
-                            <a href="#">
-                                <img class="img-responsive portfolio-item" src="https://tw.m.yimg.com/res/gdsale/st_pic/5122/st-5122643-s200.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href="#">
-                                <img class="img-responsive portfolio-item" src="https://tw.m.yimg.com/res/gdsale/st_pic/5122/st-5122643-s200.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
+                        <?php 
 
-                </div>
+                        foreach ($relate_prod as $key => $value) {
+                                
+                            ?>
+                        
+                            
+                                <div class="col-sm-3 col-xs-6">
+                                    <a href="<?php echo $value->link ?>">
+                                    <img class="img-responsive portfolio-item" src="<?php echo $value->imageLinks->medium ?>" alt="">
+                                    </a>
+                                </div>
+
+                            <?php  
+                            if($key%3 == 0 && $key !=0){
+                                echo  '</div>';
+                                   echo  '</div>';
+                                   echo  '<div class="carousel-inner">';
+                                   echo "<div class='item' >";
+                            }
+                        }
+
+                         ?>
+
+                   
+                  </div>
+                  </div>
+
+               
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
@@ -220,7 +233,7 @@
             <div class="row">
                 <div class="col-md-12">
                   <div class="col-lg-12">
-                    <h3 class="page-header">相關評論</h3>
+                    <h3 class="page-header">相關討論</h3>
                 </div>
 
                   <!--   <div class="text-right">
@@ -229,24 +242,22 @@
                 </div>
             </div>
 
+                <?php if (isset($result) && sizeof($result )>0 ): ?>
+                    <?php foreach ($result as $key => $value): ?>
+
+                      <?php 
+
+                        $title = $value[0]->title;
+                        $url = $value[0]->url;
+                        $time = $value[0]->time;
+                        $forum = $value[0]->forum;
+                        $board = $value[0]->board;
+                        $reply_count = $value[0]->reply_count;
+                        $is_reply = $value[0]->is_reply;
+                        $weight = $value[0]->weight;
 
 
-            <!-- <hr> -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    Mobile01
-                    <span class="pull-right">10天前</span>
-                    <p>不錯噢</p>
-                </div>
-            </div>
-
-            <hr>
+                       ?>
 
             <div class="row">
                 <div class="col-md-12">
@@ -255,26 +266,16 @@
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
-                    ptt
-                    <span class="pull-right">12天前</span>
-                    <p>爛！！</p>
+                    <?php echo $forum.">>".$board; ?>
+                    <span class="pull-right"><?php echo $time; ?></span>
+                    <p><a href="<?php echo  $url; ?>"><?php echo $title; ?></a></p>
                 </div>
             </div>
+            <hr />
+                    <?php endforeach ?>
+                <?php endif ?>
+              
 
-            <hr>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star-empty"></span>
-                    Mobile01
-                    <span class="pull-right">15天前</span>
-                    <p>不太好</p>
-                </div>
-            </div>
         </div>
     </div>
 

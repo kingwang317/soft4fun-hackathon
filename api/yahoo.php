@@ -1,8 +1,8 @@
 <?php
 	
 	// 搜尋 Yahoo 商城商品
-	function yahoo_search_item($keyword='', $price_sort='asc'){
-		$yql_query = "SELECT * FROM yahoo.taiwan.search.ec (1, 100) WHERE keyword='$keyword' and 
+	function yahoo_search_item($keyword='', $price_sort='asc',$num = 1){
+		$yql_query = "SELECT * FROM yahoo.taiwan.search.ec (1, $num) WHERE keyword='$keyword' and 
 						property='shopping' and sortBy='price' and sortOrder='$price_sort' and filters='ship_fast'";
 		$yql_query_url = YQL_API_URL . "?q=" . urlencode($yql_query) . "&format=json";
 		

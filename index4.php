@@ -30,6 +30,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 
     <!-- Custom CSS -->
     <link href="css/shop-item.css" rel="stylesheet">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,7 +77,10 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 
     <!-- Page Content -->
     <div class="container">
-
+<div id="dialog" title="即將產生導夠商品">
+<h3>你挑選的商品如下</h3>
+  <p name="dialog_content" id="dialog_content" ></p>
+</div>
         <div class="row">
           
             <div class="col-md-6">
@@ -110,7 +114,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
                 <?php if (isset($result) && sizeof($result )>0 ): ?>
                     <?php foreach ($result as $key => $value): ?>
                       <tr>
-                          <td><input type="checkbox" /></td>
+                          <td><input type="checkbox" name="check_url" id="check_url" value="<?php echo $value[0]->url; ?>"/></td>
                           <!-- <td><?php $value[0]->titile ?></td>  -->
                            <td><a href="<?php echo $value[0]->url; ?>"><?php print_r($value[0]->title) ?></a></td> 
                            <td>
@@ -119,7 +123,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
                                 $num2 = rand(0, 30);
                              ?>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-success" style="width: <?php echo $num1; ?>%">
+                                <div class="progress-bar progress-bar-success" style="width: <?php echo 100-$num1-$num2; ?>%">
                                     <!-- <span class="sr-only">35% Complete (success)</span> -->
                                     超讚的
                                 </div>
@@ -127,7 +131,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
                                     <!-- <span class="sr-only">20% Complete (warning)</span> -->
                                     沒感覺
                                 </div>
-                                <div class="progress-bar progress-bar-danger" style="width: <?php echo 100 - $num1 - $num2; ?>%">
+                                <div class="progress-bar progress-bar-danger" style="width: <?php echo $num1; ?>%">
                                     <!-- <span class="sr-only">10% Complete (danger)</span> -->
                                     超爛的
                                 </div>
@@ -137,7 +141,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
                           <td>
 
                             <?php 
-
+                            $prod_words = "";
                             $get_prod_sql = " SELECT word FROM prod_word WHERE source_word = '$keyword' OR word LIKE '%$keyword%' ";
 
 
@@ -147,9 +151,10 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
                                 foreach ($res_words as $key => $word) {
                                     //echo strpos($value[0]->title, $value["word"]);
                                     if( strpos(strtolower($value[0]->title), $word["word"]) !== false ){
-                                        echo $word["word"].",";
+                                        $prod_words .= $word["word"].",";
                                     }
                                 }
+                             echo $prod_words;
                              ?>
 
 
@@ -167,10 +172,10 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
                         $weight = $value[0]->weight;
 
 
-                        $insert_sql = "insert into prodkw_forum (title,url,time,forum,board,reply_count,is_reply,weight) 
-                                     values ('$title','$url','$time','$forum','$board','$reply_count','$is_reply','$weight')";
+                        $insert_sql = "insert into prodkw_forum (title,url,time,forum,board,reply_count,is_reply,weight,prod_words) 
+                                     values ('$title','$url','$time','$forum','$board','$reply_count','$is_reply','$weight','$prod_words')";
 
-                        $update_sql = "update prodkw_forum set title='$title',time='$time',forum='$forum',
+                        $update_sql = "update prodkw_forum set title='$title',time='$time',forum='$forum',prod_words='$prod_words',
                         board='$board',reply_count='$reply_count',is_reply='$is_reply',weight='$weight' where url='$url' ";
 
                         $select_sql = "select count(*) from prodkw_forum where url='$url' ";
@@ -191,7 +196,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
         </div>
         <div class="row">
             <!-- <button type="submit" id="s" class="btn btn-primary" value="產生">產生</button> -->
-            <a class="btn btn-primary" href="index2.php">產生導購頁面</a>
+            <a class="btn btn-primary" id="opener" name="opener" >產生導購頁面</a>
         </div>
     </div>
     <!-- /.container -->
@@ -217,7 +222,49 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+     $( "#gen_prods" ).click(function() {
+        var selected = [];
+        $('#check_url:checked').each(function() {
+            selected.push($(this).attr('value'));
+        });
+        $.post( "api/set_prod_words.php", { 'url': selected } ).done(function( data ) {
+            
+                loction.href = "index.php";
+            
+           
+        });
+     });
+ 
+    $( "#opener" ).click(function() {
+        var selected = [];
+        $('#check_url:checked').each(function() {
+            selected.push($(this).attr('value'));
+        });
 
+        $.post( "api/get_prod_words.php", { 'url': selected } ).done(function( data ) {
+            $("#dialog_content").empty().append( data );
+            $("#dialog_content").append( '<a class="btn btn-primary" name="gen_prods" id="gen_prods"  href="index.php">立即產生</a>' );
+
+           
+          });
+      $( "#dialog" ).dialog( "open" );
+    });
+  });
+  </script>
 </body>
 
 </html>

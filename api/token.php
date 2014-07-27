@@ -1,1 +1,1 @@
-<?php define('SER_TOKEN', '9c8cda805dff1e70de389e0b2f8d73e2');?>
+<?php define('SER_TOKEN', 'e7f91e15f792e23f5227a33ed4e672d7');?>

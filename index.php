@@ -45,13 +45,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">ASUS</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">小米</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">華為</a>
                     </li>
                 </ul>
             </div>
@@ -66,11 +66,11 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Shop Name</p>
+                <p class="lead">小硬的3C鋪</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    <a href="#" class="list-group-item">ASUS</a>
+                    <a href="#" class="list-group-item">小米</a>
+                    <a href="#" class="list-group-item">華為</a>
                 </div>
             </div>
 
@@ -87,13 +87,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/ttl_82_1_83_v7_2.jpg?ud=1407251029" alt="">
+                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/sub430_hero_big01_v7_9.jpg?ud=1407221348" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/ttl_122_1_136_v7_2.jpg?ud=1407251029" alt="">
+                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/sub430_hero_big02_v7_2.jpg?ud=1407151524" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/ttl_162_1_163_v7_2.jpg?ud=1407251029" alt="">
+                                    <img class="slide-image" src="https://tw.m.yimg.com/res/ads/img/sub430_hero_big03_v7_3.jpg?ud=1407211537" alt="">
                                 </div> 
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -111,12 +111,14 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5059114&s=400&t=0&sq=1" alt="">
+                            <a href="index2.php">
+                            <img src="https://tw.buy.yahoo.com/webservice/gdimage.ashx?id=5251544&s=400&t=0&sq=1" alt="">
+                            </a>
                             <div class="caption">
-                                <h4 class="pull-right">$1990</h4>
-                                <h4><a href="index2.php">超低售價↘</a>
+                                <h4 class="pull-right">$6990</h4>
+                                <h4><a href="index2.php">4G LTE 全頻新上市</a>
                                 </h4>
-                                <p>Victory’s D1 4吋雙核心智慧美型雙卡手機</p>
+                                <p>ASUS Zenfone 5 A500KL (2G/16G) 5吋4G LTE智慧手機</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>

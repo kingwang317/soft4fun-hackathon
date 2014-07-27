@@ -38,8 +38,8 @@ if(isset($res)){
 	<input type="radio" name="class" value="neu">中性情緒詞<br />
 	<input type="radio" name="class" value="ign">不是情緒詞(如 你我他等介係詞)<br />
 	<input type="submit" value="反饋" />
-	<!--<a href="senindex.php">我也要玩情感分析</a>-->
-	QQ斷詞系統GG了
+	<a href="senindex.php">我也要玩情感分析</a>
+	<!--QQ斷詞系統GG了-->
 	</form>
 	</body>
 </html>
